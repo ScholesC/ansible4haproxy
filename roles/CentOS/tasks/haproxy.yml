@@ -1,0 +1,9 @@
+- name: install /etc/haproxy/haproxy.cfg
+  template:
+    src: haproxy/haproxy.cfg
+    dest: /etc/haproxy/haproxy.cfg
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - restart haproxy

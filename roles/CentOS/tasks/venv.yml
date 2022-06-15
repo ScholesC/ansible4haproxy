@@ -1,0 +1,20 @@
+- name: create venv dir
+  file:
+    path: '{{ item }}'
+    owner: root
+    group: root
+    mode: 755
+    state: directory
+  with_items:
+    - /opt/venv
+
+- name: pip install virtualenv
+  pip:
+    name: virtualenv
+    executable: pip3
+
+- name: create venv and install requests
+  pip:
+    name: ['requests', 'xmltodict']
+    virtualenv: /opt/venv/haproxy
+    virtualenv_command: virtualenv --python=python3

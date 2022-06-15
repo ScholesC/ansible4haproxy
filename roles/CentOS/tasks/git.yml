@@ -1,0 +1,7 @@
+- name: install ~/.gitconfig
+  template:
+    src: gitconfig/gitconfig 
+    dest: /root/.gitconfig
+    owner: root
+    group: root
+    mode: '0644'

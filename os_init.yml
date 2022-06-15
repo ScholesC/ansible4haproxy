@@ -1,0 +1,17 @@
+- hosts: localhost
+  gather_facts: True
+
+  pre_tasks:
+    - debug:
+        msg:
+          - "Server   fqdn: {{ ansible_fqdn }}"
+          - "product  name: {{ ansible_product_name }}"
+          - "System vendor: {{ ansible_system_vendor }}"
+          - "Cores   count: {{ ansible_processor_count }}"
+          - "CPU     model: {{ ansible_processor | join(' ') }}"
+          - "Memory   size: {{ ansible_memtotal_mb }}"
+          - "System OS Ver: {{ ansible_distribution }} {{ ansible_distribution_version }}"      
+  
+  roles:
+    - role: 'CentOS'
+      when: ansible_distribution == 'CentOS'

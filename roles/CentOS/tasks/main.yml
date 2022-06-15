@@ -1,0 +1,8 @@
+- include: yum.yml
+- include: etckeeper.yml
+- include: ssh.yml
+- include: git.yml
+- include: tmux.yml
+- include: haproxy.yml
+- include: venv.yml
+- include: service.yml

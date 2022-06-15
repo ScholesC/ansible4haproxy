@@ -1,0 +1,9 @@
+- name: yum install packages
+  yum:
+    name: ['epel-release', 'etckeeper', 'haproxy', 'fail2ban', 'python3', 'python3-pip', 'tmux', 'chrony']
+    state: latest
+  notify:
+    - restart haproxy
+    - restart fail2ban
+    - stop firewalld
+    - restart chronyd

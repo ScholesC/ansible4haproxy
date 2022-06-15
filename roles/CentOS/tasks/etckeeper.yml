@@ -1,0 +1,7 @@
+- name: Check etckeeper /etc/.git exists or not
+  stat: path=/etc/.git
+  register: p
+
+- name: etckeeper init
+  command: etckeeper init
+  when: not p.stat.exists

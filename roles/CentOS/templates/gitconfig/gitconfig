@@ -1,0 +1,18 @@
+[user]
+    email = skles@126.com
+    name = hattrick
+[credential]
+    helper = cache --timeout=36000
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+[color]
+    status = auto
+    diff = auto
+    branch = auto
+    interactive = auto
