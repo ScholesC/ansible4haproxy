@@ -78,7 +78,7 @@ def main():
     zone_id = '09ab87df4fef66e1adb5e4f39b4fbb41'
     dns_name = 'shop.buytheworld.shop'
     proxied = False
-    pub_ip = get_pub_ip
+    pub_ip = get_pub_ip()
     token = os.environ['CFTOKEN']
     if not token:
         print('failed to find token.')
