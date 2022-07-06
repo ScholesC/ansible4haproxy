@@ -75,14 +75,12 @@ def main():
     '''
     api token
     '''
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--token", help="cloudflare dns api token.")
-    args = parser.parse_args()
     zone_id = '09ab87df4fef66e1adb5e4f39b4fbb41'
     dns_name = 'shop.buytheworld.shop'
     proxied = False
     pub_ip = get_pub_ip
-    api_token = args.token
+    token = input("Enter your token: ")
+    api_token = token
     if valid_ip(pub_ip):
         dns_id = get_record_id(dns_name, zone_id, api_token)
         if update_dns_record(dns_name, zone_id, api_token, dns_id, pub_ip, proxied):
