@@ -1,5 +1,5 @@
 - name: update dns record
-  command: /opt/venv/haproxy/bin/python3 "roles/{{ role_name }}/files/update_dns_record.py"
+  command: /opt/venv/haproxy/bin/python3 "roles/{{ role_name }}/files/update_dns.py"
   register: update_dns_record
 
 - name: print dns update result
