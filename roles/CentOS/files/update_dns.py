@@ -35,6 +35,7 @@ def update_dns_record(dns_name, zone_id, token, dns_id, my_ip, proxied=False):
             'type': 'A',
             'name': dns_name,
             'content': my_ip,
+            'ttl': 60,
             'proxied': proxied
         },
         headers={
