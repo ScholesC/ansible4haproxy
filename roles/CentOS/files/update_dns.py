@@ -2,8 +2,8 @@
 '''
 script to update dns record in cloudflare
 '''
+import os
 import json
-import argparse
 import requests
 
 def get_record_id(dns_name, zone_id, token):
@@ -79,7 +79,9 @@ def main():
     dns_name = 'shop.buytheworld.shop'
     proxied = False
     pub_ip = get_pub_ip
-    token = input("Enter your token: ")
+    token = os.environ['CFTOKEN']
+    if not token:
+        print('failed to find token.')
     api_token = token
     if valid_ip(pub_ip):
         dns_id = get_record_id(dns_name, zone_id, api_token)
