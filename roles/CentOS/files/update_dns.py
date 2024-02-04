@@ -76,8 +76,8 @@ def main():
     '''
     api token
     '''
-    zone_id = '09ab87df4fef66e1adb5e4f39b4fbb41'
-    dns_name = 'shop.buytheworld.shop'
+    zone_id = 'f975f55ad348420f242b065d112a006d'
+    dns_name = 'hello.dingdingdong.cc'
     proxied = False
     pub_ip = get_pub_ip()
     token = os.environ['CFTOKEN']
